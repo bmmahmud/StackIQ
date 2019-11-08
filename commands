@@ -1,0 +1,8 @@
+New Project--- composer create-project --prefer-dist laravel/laravel blog "5.6.*"
+Run Server --- php artisan serve
+Login - php artisan make:auth
+migrate BD --- php artisan migrate 
+make new model --- php artisan make:model ModelName -m
+to test function--- php artisan tinker
+
+create Factory --- php artisan make:factory name
