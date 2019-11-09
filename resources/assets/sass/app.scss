@@ -12,3 +12,18 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.counters{
+  margin-right: 30px;
+  font-size:10px;
+  text-align:center ;
+
+  strong{
+    font-size: 2em;
+    display: block;
+  }
+  .status{
+    height: 60px;
+    width: 60px;
+  }
+}
