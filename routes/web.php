@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//methonds:resource,get,post,group
 Route::get('/', function () {
     return view('welcome');
 });
@@ -18,3 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+//My Created Route
+Route::resource('questions','QuestionController');
+

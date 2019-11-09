@@ -6,3 +6,7 @@ make new model --- php artisan make:model ModelName -m
 to test function--- php artisan tinker
 
 create Factory --- php artisan make:factory name
+
+seed to DB --- php artisan migrate:fresh --seed
+Create Controller --- php artisan make:Controller QuestionController --routeMethod --model=name
+make pagination --- php artisan vendor:publish --tag=laravel-pagination
