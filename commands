@@ -12,3 +12,5 @@ Create Controller --- php artisan make:Controller QuestionController --routeMeth
 make pagination --- php artisan vendor:publish --tag=laravel-pagination
 
 SASS
+
+

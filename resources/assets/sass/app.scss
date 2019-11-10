@@ -13,6 +13,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
+// Status Like, Comment
 .counters{
   margin-right: 30px;
   font-size:10px;
@@ -22,8 +23,24 @@
     font-size: 2em;
     display: block;
   }
-  .status{
+  .status{ 
     height: 60px;
     width: 60px;
+
+    &.answered{
+      border:none;
+    }
+    &.unanswered{
+      border: 1px solid $color-green;
+      color: $color-green;
+    }
+    &.answered-accepted{
+      background:$color-green ;
+      color:$color-white;
+    }
   }
-}
+  .views{
+    margin-top: 10px;
+  }
+
+} // conter
