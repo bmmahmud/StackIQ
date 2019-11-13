@@ -11686,3 +11686,7 @@ a.text-dark:focus {
   margin-top: 10px;
 }
 
+.counters .form-delete {
+  display: inline;
+}
+

@@ -17,6 +17,8 @@
                 </div>
 
                 <div class="card-body">
+                    @include('layouts._message')
+
                 @foreach($questions as $question)
                 <div class="media">
                     <div class="d-flex flex-column counters">
@@ -33,12 +35,26 @@
                             {{str_plural('view',$question->views)}}
                         </div>
                     </div>
-                       <div>
-                        <h4>
-                            <a href="{{$question->url}}">
-                            {{$question->title}}
-                            </a>
-                        </h4>
+                       <div class="media-body">
+                            <div class="d-flex align-items-center">
+                                <h4 class="mt-0">
+                                    <a href="{{$question->url}}">
+                                    {{$question->title}}
+                                    </a>
+                                </h4>
+                                
+                                <div class="ml-auto">
+                                    <a class="btn btn-sm btn-outline-secondary" 
+                                    href="{{route('questions.edit',$question->id)}}">
+                                        Edit
+                                    </a>
+                                    <form class="form-delete" action="{{route('questions.destroy',$question->id)}}">
+                                        <button onclick="return confirm('Are You Sure?')" class="btn btn-sm btn-outline-danger"  type="sumbit">
+                                            Delete
+                                        </button>    
+                                    </form>    
+                                </div>
+                            </div>
                         <p class="lead">
                             Asked by <a href="{{$question->user->url}}">
                                 {{$question->user->name}}</a>
