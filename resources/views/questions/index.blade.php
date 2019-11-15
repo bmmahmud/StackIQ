@@ -48,8 +48,11 @@
                                     href="{{route('questions.edit',$question->id)}}">
                                         Edit
                                     </a>
-                                    <form class="form-delete" action="{{route('questions.destroy',$question->id)}}">
-                                        <button onclick="return confirm('Are You Sure?')" class="btn btn-sm btn-outline-danger"  type="sumbit">
+                                    <form class="form-delete" action="{{route('questions.destroy',$question->id)}}" method="post">
+                                        @method('Delete')
+                                        @csrf
+                                        <button onclick="return confirm('Are You Sure?')" 
+                                        class="btn btn-sm btn-outline-danger"  type="sumbit">
                                             Delete
                                         </button>    
                                     </form>    
