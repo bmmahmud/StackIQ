@@ -21,13 +21,15 @@
                 @csrf
                     <div class="form-group">
                       <label for="question-title">Question Title</label>
-                      <input value="{{old('title')}}" class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" name="title" 
-                      type="text" id="question-title"> 
-                        @if ($errors->has('title'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('title') }}</strong>
-                                    </span>
-                        @endif
+                      <input value="{{old('title')}}" 
+                        class="form-control {{ $errors->has('title') ? ' is-invalid' : '' }}" 
+                        name="title" 
+                        type="text" id="question-title"> 
+                            @if ($errors->has('title'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('title') }}</strong>
+                                        </span>
+                            @endif
                     </div>
                     <div class="form-group">
                       <label for="question-body">Explain Your Question</label>

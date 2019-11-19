@@ -14,6 +14,10 @@ class Question extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function getUrlAttribute(){
+      return route('questions.show', $this->slug);  
+    }
+
     public function setTitleAttribute($value){
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = str_slug($value);

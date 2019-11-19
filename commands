@@ -12,5 +12,15 @@ Create Controller --- php artisan make:Controller QuestionController --routeMeth
 make pagination --- php artisan vendor:publish --tag=laravel-pagination
 
 SASS
+--------------
+---Start
+ npm cache clear --force
+ npm install env-cross
+ npm install
+ npm run watch
+
+
+npm run watch
+npm run development -- --watch
 
 
