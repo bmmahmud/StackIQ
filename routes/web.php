@@ -11,8 +11,8 @@
 |
 */
 //methonds:resource,get,post,group
-
-use Symfony\Component\Routing\Route;
+ 
+//use Symfony\Component\Routing\Route;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,8 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 //My Created Route
 Route::resource('questions','QuestionController')->except('show');
 Route::get('questions/{slug}','QuestionController@show')
-            ->name('questions.show');
+            ->name('questions.show');  
 

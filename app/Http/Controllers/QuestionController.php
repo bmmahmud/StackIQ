@@ -44,7 +44,6 @@ class QuestionController extends Controller
         $request->user()->questions()->create($request->only('title','body'));
         return redirect()->route('questions.index')
         ->with('success',' Your Form has been submitted');
-
     }
 
     /**
@@ -56,6 +55,7 @@ class QuestionController extends Controller
     public function show(question $question)
     {
         //
+        return view('questions.show',compact('question'));
     }
 
     /**
