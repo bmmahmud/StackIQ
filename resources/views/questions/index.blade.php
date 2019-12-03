@@ -28,7 +28,7 @@
                         </div>
                         <div class="status {{$question->status}}">
                             <strong>{{$question->answers}}</strong>
-                            {{str_plural('answer',$question->answers)}}
+                            {{str_plural('answer',$question->answers_count)}}
                         </div>
                         <div class="views">
                             {{$question->views}}
@@ -44,18 +44,22 @@
                                 </h4>
                                 
                                 <div class="ml-auto">
-                                    <a class="btn btn-sm btn-outline-secondary" 
-                                    href="{{route('questions.edit',$question->id)}}">
-                                        Edit
-                                    </a>
-                                    <form class="form-delete" action="{{route('questions.destroy',$question->id)}}" method="post">
-                                        @method('Delete')
-                                        @csrf
-                                        <button onclick="return confirm('Are You Sure?')" 
-                                        class="btn btn-sm btn-outline-danger"  type="sumbit">
-                                            Delete
-                                        </button>    
-                                    </form>    
+                                    @if(Auth::user()->can('update-question',$question))
+                                        <a class="btn btn-sm btn-outline-secondary" 
+                                        href="{{route('questions.edit',$question->id)}}">
+                                            Edit
+                                        </a>
+                                    @endif
+                                    @if(Auth::user()->can('delete-question',$question))    
+                                        <form class="form-delete" action="{{route('questions.destroy',$question->id)}}" method="post">
+                                            @method('Delete')
+                                            @csrf
+                                            <button onclick="return confirm('Are You Sure?')" 
+                                            class="btn btn-sm btn-outline-danger"  type="sumbit">
+                                                Delete
+                                            </button>    
+                                        </form> 
+                                    @endif   
                                 </div>
                             </div>
                         <p class="lead">

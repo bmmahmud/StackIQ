@@ -11,6 +11,9 @@ seed to DB --- php artisan migrate:fresh --seed
 Create Controller --- php artisan make:Controller QuestionController --routeMethod --model=name
 make pagination --- php artisan vendor:publish --tag=laravel-pagination
 
+Column Modification---
+
+
 SASS
 --------------
 ---Start
